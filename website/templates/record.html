@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card" style="width: 30rem;">
+    <div class="card-header">
+        {{ customer_record.first_name}} {{ customer_record.last_name }}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><p><strong>Email: </strong>{{ customer_record.email }}</p></li>
+      <li class="list-group-item"><p><strong>Phone: </strong>{{ customer_record.phone }}</p></li>
+      <li class="list-group-item"><p><strong>Address: </strong>{{ customer_record.address }}</p> </li>
+      <li class="list-group-item"><p><strong>City: </strong> {{ customer_record.city }} </p> </li>
+      <li class="list-group-item"><p><strong>State: </strong>{{ customer_record.state }}</p></li>
+      <li class="list-group-item"><p><strong>Zipcode: </strong>{{ customer_record.zipcode }}</p></li>
+      <li class="list-group-item"><p><strong>Created At: </strong>{{ customer_record.created_at }}</p></li>
+      <li class="list-group-item"><p><strong>ID: </strong>{{ customer_record.id }}</p></li>
+    </ul>
+  </div>
+  <a href="{% url 'home' %}" class="btn btn-dark">Go Home</a>
+  <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'update_record' customer_record.id %}" class="btn btn-light">Update</a>
+
+{% endblock %}
